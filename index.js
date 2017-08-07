@@ -2,9 +2,11 @@
 /**
  * let's look at a bunch of videos and get their transcript urls
  */
-var MongoClient = require('mongodb').MongoClient;
-var url         = "mongodb://localhost:27017/bjjc_development";
-var page        = require("webpage").create();
+// var MongoClient = require('mongodb').MongoClient;
+// var url         = "mongodb://localhost:27017/bjjc_development";
+// var page        = require("webpage").create();
+
+console.log('hello, ready!');
 
 page.settings.userAgent = "Mozilla/5.0 (X11; rv:24.0) Gecko/20130909 Firefox/24.0";
 
@@ -19,7 +21,7 @@ MongoClient.connect(url, function(err, db) {
 }); 
 
 // https://www.youtube.com/embed/dQw4w9WgXcQ
-page.open("https://www.youtube.com/watch?v=4fE_njY63o4", function (status) {
+/* page.open("https://www.youtube.com/watch?v=4fE_njY63o4", function (status) {
   console.log("+++ +++ in?");
 
   if (status !== "success") {
@@ -28,16 +30,16 @@ page.open("https://www.youtube.com/watch?v=4fE_njY63o4", function (status) {
 
     phantom.exit();
   } else {
-    console.log("+++ +++ status ok?")
+    console.log("+++ +++ status ok?");
     var whatever = page.evaluate(function(s) {
       if (yt.config_.TTS_URL.length) {
-        var thisXml = yt.config_.TTS_URL+"&kind=asr&fmt=srv1&lang=en"
+        var thisXml = yt.config_.TTS_URL+"&kind=asr&fmt=srv1&lang=en";
         // window.location.href = yt.config_.TTS_URL+"&kind=asr&fmt=srv1&lang=en"
-        console.log("+++ +++ thisXml:", thisXml)
+        console.log("+++ +++ thisXml:", thisXml);
         return thisXml;
       }
-    })
-    console.log("+++ +++ whatever:", whatever)
+    });
+    console.log("+++ +++ whatever:", whatever);
 
     /* if (yt.config_.TTS_URL.length) {
       var thisXml = yt.config_.TTS_URL+"&kind=asr&fmt=srv1&lang=en"
@@ -46,4 +48,4 @@ page.open("https://www.youtube.com/watch?v=4fE_njY63o4", function (status) {
     } */
   }
 });
-
+*/

@@ -2,13 +2,15 @@
 /**
  * let's look at a bunch of videos and get their transcript urls
  */
-var MongoClient = require('mongodb').MongoClient;
-var url         = "mongodb://localhost:27017/bjjc_development";
+// var MongoClient = require('mongodb').MongoClient;
+// var url         = "mongodb://localhost:27017/bjjc_development";
 var page        = require("webpage").create();
 
 page.settings.userAgent = "Mozilla/5.0 (X11; rv:24.0) Gecko/20130909 Firefox/24.0";
 
-MongoClient.connect(url, function(err, db) {
+console.log('hello, ready!')
+
+/* MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var query = { transcript_url: { $exists: true } }; // { address: "Park Lane 38" };
   db.collection("videos").find(query).limit(10).toArray(function(err, result) {
@@ -16,7 +18,7 @@ MongoClient.connect(url, function(err, db) {
     console.log("+++ db result:", result);
     db.close();
   });
-}); 
+}); */ 
 
 // https://www.youtube.com/embed/dQw4w9WgXcQ
 page.open("https://www.youtube.com/watch?v=4fE_njY63o4", function (status) {
